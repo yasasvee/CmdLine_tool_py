@@ -2,11 +2,9 @@ import click
 import os
 
 @click.command()
-@click.option('--h', default = "vizag", help = "Gives Weather at Yash Home")
-@click.option('--c', prompt = "Please give in your city", help = "Gives Weather at a custom location")
-def pictWeather(city):
-#    result = os.popen("curl wttr.in/"+city).read()
-    click.echo(city)
-
+@click.option('--browser', default='http://www.google.co.in', help='Opens google chrome')
+def runCmd(browser):
+    click.echo('Opening browser with '+browser)
+    os.system("start chrome "+browser)
 if __name__ == '__main__':
-    pictWeather()
+    runCmd()
